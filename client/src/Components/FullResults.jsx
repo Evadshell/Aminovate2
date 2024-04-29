@@ -7,14 +7,11 @@ const FullResults = (props) => {
     const [resultData, setResultData] = useState([]);
     const [currentStep, setCurrentStep] = useState(0);
     useEffect(() => {
-        // Simulated XML response data
         const xmlResponse = XML;
 
-        // Parsing XML data
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(xmlResponse, 'text/xml');
 
-        // Extracting pods and subpods from XML
         const pods = xmlDoc.querySelectorAll('pod');
         const parsedResults = [];
 

@@ -47,7 +47,6 @@ const Home = () => {
     };
     const [questions, setQuestions] = useState('');
 
-    // Function to handle changes in input
     const handleInputChange = (event) => {
       setQuestions(event.target.value);
     };
@@ -64,10 +63,10 @@ const Home = () => {
         }
       
             };
-            const navigate = useNavigate(); // Initialize the navigate function
+            const navigate = useNavigate();  
   
             const handleTryMathBot = () => {
-              navigate('/mathbot'); // Navigate to "/mathbot" route
+              navigate('/mathbot'); 
             };
             return (
             <>
@@ -78,7 +77,7 @@ const Home = () => {
         bgImage={`url(${math})`}
         backgroundSize="cover"
         backgroundPosition="center"
-        minHeight="100vh" // Ensure the background covers the entire viewport
+        minHeight="100vh" 
       ><Button
       colorScheme="blue"
       bgSize="cover"
@@ -90,7 +89,7 @@ const Home = () => {
       position="absolute"
       top="8rem"
       right="0.3rem"
-      onClick={handleTryMathBot} // Call handleTryMathBot when the button is clicked
+      onClick={handleTryMathBot}  
     >
       Try MathBot
     </Button>
@@ -100,13 +99,13 @@ const Home = () => {
           borderRadius="lg"
           boxShadow="xl"
           w="80vw"
-          maxW="700px" // Limit the width of the container
+          maxW="700px" 
         >
           <Center>
             <Heading mb={4}>Welcome to Math Portal</Heading>
           </Center>
          
-          <Flex justifyContent="flex-end"> {/* Align items to the top right */}
+          <Flex justifyContent="flex-end"> 
             <Input
               placeholder="Search for a math query..."
               variant="filled"
@@ -117,13 +116,13 @@ const Home = () => {
               value={questions}
               onChange={handleInputChange}
               _placeholder={{ color: 'gray.500' }}
-              border="2px solid #CBD5E0" // Add border style
+              border="2px solid #CBD5E0"  
             />
             <Button colorScheme="teal" onClick={handleAsk} size="md" mb={8}>
               Search
             </Button>
           </Flex>
-          {Data && <FullResults XML={Data} />} {/* Render FullResults component if Data exists */}
+          {Data && <FullResults XML={Data} />}  
         </Box>
       </Flex>
             </>

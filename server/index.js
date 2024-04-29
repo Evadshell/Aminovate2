@@ -153,7 +153,7 @@ app.get("/login/success",async(req,res)=>{
   }
 })
 app.get('/fullresult',async(req,res)=>{
-  if(req.isAuthenticated()){
+ 
   const question = encodeURIComponent(req.query.question);
   const appid= process.env.FULLRESULT_API;
   try {
@@ -164,9 +164,6 @@ app.get('/fullresult',async(req,res)=>{
   } catch (error) {
     console.error('Error fetching data from Wolfram Alpha API:', error);
     res.status(500).json({ error: 'Internal server error' });
-  }}
-  else {
-    res.status(400).json({message:"not logged in "})
   }
 })
 
